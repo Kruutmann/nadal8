@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root{
+    --my-padding: 0.4rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color: rgb(255, 255, 255);
+    display: grid;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 0.1fr 1fr 0.5fr 0.5fr 0.2fr;
+    grid-template-areas: 
+    "header menu menu menu"
+    "content3 content3 content3 content3"
+    "main main content1 content1"
+    "main main content2 content2"
+    "footer footer footer footer "
+    
+    ;
+    
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+nav{
+    background-color: cadetblue;
+    grid-area: nav;
+    padding: var(--my-padding);
+}
+.nav-container{
+    align-items: center;
+    display: grid;
+    height: 100%;
+    grid-area: nav;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+.header{
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    grid-area: header;
+    padding: var(--my-padding);
+    
+}
+.menu{
+    align-items: center;
+    background-color: crimson;
+    grid-area: menu;
+    padding: var(--my-padding);
+    
+}
+
+
+
+.content1{
+    align-items: center;
+    background-color: rgb(114, 111, 112);
+    grid-area: content1;
+    padding: var(--my-padding);
+    
+}
+
+.content2{
+    background-color: rgb(49, 226, 43);
+    grid-area: content2;
+    padding: var(--my-padding);
+    
+}
+
+.content3{
+    background-color: rgb(0, 110, 255);
+    grid-area: content3;
+    padding: var(--my-padding);
+    
+}
+
+.sidebar{
+    background-color: lightgrey;
+    grid-area: sidebar;
+    padding: var(--my-padding);
+}
+
+main{
+    background-color: lightgreen;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+footer{
+    background-color: rgb(253, 161, 22);
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+@media(max-width: 1024px) and (min-width:481px){
+    .container{
+        grid-template-columns: 0.5fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr 0.5fr 0.2fr;
+        grid-template-areas: 
+        "header header header"
+        "content3 content3 content3"
+        "menu main main"
+        "menu footer footer"
+        "menu content2 content1"
+        ;
+    }
+    }
+    
+    
+
+@media(max-width: 480px){
+    
+   
+    
+    
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1fr 1.5fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "content3"
+        "main"
+        "footer"
+        "content2"
+        "content1"
+        ;
+    }
+}
